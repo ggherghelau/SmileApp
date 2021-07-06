@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Smile.Models;
 
 namespace Smile.Data
@@ -22,6 +22,15 @@ namespace Smile.Data
                 throw new ArgumentNullException(nameof(jk));
             }
             _context.Jokes.Add(jk);
+        }
+
+        public void DeleteJoke(Joke jk)
+        {
+            if(jk == null)
+            {
+                throw new ArgumentNullException(nameof(jk));
+            }
+            _context.Jokes.Remove(jk);
         }
 
         public async Task<IEnumerable<Joke>> GetAllJokes()

@@ -10,6 +10,7 @@ namespace Smile.Data
         Task<Joke> GetJokeById(int id);
         void CreateJoke(Joke jk);
         void UpdateJoke(Joke jk);
+        void DeleteJoke(Joke jk);
         bool SaveChanges();
     }
 }

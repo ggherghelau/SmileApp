@@ -11,6 +11,7 @@ namespace Smile.Profiles
             CreateMap<Joke, JokeReadDto>();
             CreateMap<JokeCreateDto, Joke>();
             CreateMap<JokeUpdateDto, Joke>();
+            CreateMap<Joke, JokeUpdateDto>();
         }
     }
 }

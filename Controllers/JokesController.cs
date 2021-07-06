@@ -6,6 +6,7 @@ using Smile.Data;
 using Smile.Models;
 using AutoMapper;
 using Smile.Dtos;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Smile.Controllers
 {
@@ -58,19 +59,52 @@ namespace Smile.Controllers
         }
 
         //PUT api/jokes/{id}
-        [HttpPut("{id}")]
-        public ActionResult UpdateJoke(int id, JokeUpdateDto jokeUpdateDto)
-        {
-            var jokeModelFromRepo = _repository.GetJokeById(id);
-            if(jokeModelFromRepo == null){
-                return NotFound();
-            }
-            _mapper.Map(jokeUpdateDto, jokeModelFromRepo);
+        // [HttpPut("{id}")]
+        // public ActionResult UpdateJoke(int id, JokeUpdateDto jokeUpdateDto)
+        // {
+        //     var jokeModelFromRepo = _repository.GetJokeById(id);
+        //     if(jokeModelFromRepo == null){
+        //         return NotFound();
+        //     }
+        //     _mapper.Map(jokeUpdateDto, jokeModelFromRepo);
 
-            //_repository.UpdateJoke(jokeModelFromRepo);
-            _repository.SaveChanges();
+        //     //_repository.UpdateJoke(jokeModelFromRepo);
+        //     _repository.SaveChanges();
 
-            return NoContent();
-        }
+        //     return NoContent();
+        // }
+
+        //PATCH api/jokes/{id}
+        // [HttpPatch("{id}")]
+        // public ActionResult PartialJokeUpdate(int id, JsonPatchDocument<JokeUpdateDto> patchDoc)
+        // {
+        //     var jokeModelFromRepo = _repository.GetJokeById(id);
+        //     if(jokeModelFromRepo == null){
+        //         return NotFound();
+        //     }
+        //     var jokeToPatch = _mapper.Map<JokeUpdateDto>(jokeModelFromRepo);
+        //     patchDoc.ApplyTo(jokeToPatch, ModelState);
+        //     if(!TryValidateModel(jokeToPatch))
+        //     {
+        //         return ValidationProblem(ModelState);
+        //     }
+        //     _mapper.Map(jokeToPatch, jokeModelFromRepo);
+        //     //_repository.UpdateJoke(jokeModelFromRepo);
+        //     _repository.SaveChanges();
+        //     return NoContent();
+        // }
+
+        //DELETE api/joles/{id}
+        // [HttpDelete("{id}")]
+        // public ActionResult DeleteJoke(int id)
+        // {
+        //     var jokeModelFromRepo = _repository.GetJokeById(id);
+        //     if(jokeModelFromRepo == null){
+        //         return NotFound();
+        //     }
+        //     _repository.DeleteJoke(jokeModelFromRepo);
+        //     _repository.SaveChanges();
+        //     return NoContent();
+        // }
     }
 }

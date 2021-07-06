@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Smile.Data;
+using Newtonsoft.Json.Serialization;
 
 namespace Smile
 {
@@ -30,7 +31,8 @@ namespace Smile
             services.AddDbContext<SmileContext>(option => option.UseSqlServer
                 (Configuration.GetConnectionString("SmileConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => 
+            s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

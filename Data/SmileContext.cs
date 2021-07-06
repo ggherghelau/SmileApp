@@ -1,5 +1,3 @@
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Smile.Models;
 using Microsoft.AspNetCore.Identity;
