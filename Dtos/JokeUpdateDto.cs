@@ -1,11 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Smile.Models 
+namespace Smile.Dtos 
 {
-    public class Joke
+    public class JokeUpdateDto
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         public string JokeContent { get; set; }
     }

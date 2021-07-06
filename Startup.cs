@@ -32,6 +32,8 @@ namespace Smile
 
             services.AddControllers();
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddScoped<IJokeRepo, JokeRepo>();
         }
 

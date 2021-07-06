@@ -8,5 +8,8 @@ namespace Smile.Data
     {
         Task<IEnumerable<Joke>> GetAllJokes();
         Task<Joke> GetJokeById(int id);
+        void CreateJoke(Joke jk);
+        void UpdateJoke(Joke jk);
+        bool SaveChanges();
     }
 }
