@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Smile.Data;
 using Smile.Models;
 using AutoMapper;
-using Smile.Dtos;
+using Smile.Dtos.JokeDtos;
 using Microsoft.AspNetCore.JsonPatch;
 
 namespace Smile.Controllers

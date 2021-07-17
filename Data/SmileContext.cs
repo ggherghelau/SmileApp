@@ -12,5 +12,7 @@ namespace Smile.Data
         }
 
         public DbSet<Joke> Jokes { get; set; }
+        public DbSet<Cheer> Cheers { get; set; }
+        public DbSet<Praise> Praises { get; set; }
     }
 }

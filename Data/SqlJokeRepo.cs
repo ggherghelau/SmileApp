@@ -6,11 +6,11 @@ using Smile.Models;
 
 namespace Smile.Data
 {
-    public class JokeRepo : IJokeRepo
+    public class SqlJokeRepo : IJokeRepo
     {
         private readonly SmileContext _context;
 
-        public JokeRepo(SmileContext context)
+        public SqlJokeRepo(SmileContext context)
         {
             _context = context;
         }

@@ -36,7 +36,9 @@ namespace Smile
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IJokeRepo, JokeRepo>();
+            services.AddScoped<IJokeRepo, SqlJokeRepo>();
+            services.AddScoped<ICheerRepo, SqlCheerRepo>();
+            services.AddScoped<IPraiseRepo, SqlPraiseRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

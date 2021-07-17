@@ -1,5 +1,5 @@
 using AutoMapper;
-using Smile.Dtos;
+using Smile.Dtos.JokeDtos;
 using Smile.Models;
 
 namespace Smile.Profiles
